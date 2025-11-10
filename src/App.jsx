@@ -197,7 +197,7 @@ export default function App() {
           <h2 className="text-3xl font-bold text-gray-800 mb-8">Connect With Tammy</h2>
           <div className="flex justify-center gap-6 mb-8">
             <a 
-              href="https://facebook.com" 
+              href="https://www.facebook.com/people/Tammy-For-Treasurer-2028/61583293354065/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition"
@@ -213,13 +213,13 @@ export default function App() {
               <Linkedin size={32} />
             </a>
             <a 
-              href="mailto:contact@example.com"
+              href="mailto:sales@sherrellrealty.com"
               className="bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition"
             >
               <Mail size={32} />
             </a>
             <a 
-              href="tel:+15551234567"
+              href="tel:+14176999100"
               className="bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition"
             >
               <Phone size={32} />
@@ -231,7 +231,7 @@ export default function App() {
               Learn more about Tammy's professional real estate services
             </p>
             <a 
-              href="https://www.example.com" 
+              href="https://www.sherrellrealty.com/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
