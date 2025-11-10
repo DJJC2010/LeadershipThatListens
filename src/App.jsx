@@ -52,25 +52,25 @@ export default function App() {
   };
 
   return (
-  <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+<div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
   {/* Combined Header/Hero Section - White Background */}
   <header className="bg-white shadow-md relative overflow-hidden">
-    <div className="max-w-6xl mx-auto px-6 flex items-end justify-center gap-0 -mb-0">
+    <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-end justify-center gap-4 md:gap-0 py-6 md:py-0 md:-mb-0">
       {/* Headshot on Left */}
       <div className="flex">
         <img 
           src="/images/tammyphoto-removebg-preview.png" 
           alt="Tammy Sherrell-Shortt" 
-          className="h-96 md:h-[400px] w-auto block"
+          className="h-64 md:h-96 lg:h-[400px] w-auto block"
         />
       </div>
       
       {/* Logo on Right - Flush Bottom */}
-      <div className="flex overflow-hidden max-h-96 md:max-h-[400px]">
+      <div className="flex overflow-hidden max-h-64 md:max-h-96 lg:max-h-[400px]">
         <img 
           src="/images/tammylogo-removebg-preview.png" 
           alt="Leadership That Listens" 
-          className="h-96 md:h-[600px] w-auto block relative top-8 md:top-4"
+          className="h-64 md:h-96 lg:h-[600px] w-auto block relative top-4 md:top-8 lg:top-4"
         />
       </div>
     </div>
