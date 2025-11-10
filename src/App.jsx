@@ -23,35 +23,29 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Header with Logo */}
-      <nav className="bg-white shadow-sm py-4 px-6">
-        <div className="max-w-6xl mx-auto flex justify-center">
-          <img 
-            src="/images/tammylogo-removebg-preview.png" 
-            alt="Tammy Sherrell-Shortt Campaign Logo" 
-            className="h-16 object-contain"
-          />
-        </div>
-      </nav>
-
-      {/* Hero Section with Headshot */}
-      <header className="bg-gradient-to-r from-blue-900 to-blue-700 text-white relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 min-h-[400px] flex flex-col md:flex-row items-end md:justify-between">
-          <div className="flex justify-center md:justify-start w-full md:w-auto order-1 md:order-1">
-            <img 
-              src="/images/tammyphoto-removebg-preview.png" 
-              alt="Tammy Sherrell-Shortt" 
-              className="h-64 md:h-96 w-auto object-contain object-bottom"
-            />
-          </div>
-          <div className="text-center md:text-left py-8 md:pb-8 w-full md:w-auto order-2 md:order-2">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Tammy Sherrell-Shortt</h1>
-            <p className="text-xl md:text-2xl mb-2">Leadership That Listens</p>
-            <p className="text-lg md:text-xl opacity-90">For NAR Leadership</p>
-          </div>
-        </div>
-      </header>
+  <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+  {/* Combined Header/Hero Section - White Background */}
+  <header className="bg-white shadow-md relative overflow-hidden">
+    <div className="max-w-6xl mx-auto px-6 flex items-end justify-center gap-0 -mb-0">
+      {/* Headshot on Left */}
+      <div className="flex">
+        <img 
+          src="/images/tammyphoto-removebg-preview.png" 
+          alt="Tammy Sherrell-Shortt" 
+          className="h-96 md:h-[400px] w-auto block"
+        />
+      </div>
+      
+      {/* Logo on Right - Flush Bottom */}
+      <div className="flex overflow-hidden max-h-96 md:max-h-[400px]">
+        <img 
+          src="/images/tammylogo-removebg-preview.png" 
+          alt="Leadership That Listens" 
+          className="h-96 md:h-[600px] w-auto block relative top-8 md:top-4"
+        />
+      </div>
+    </div>
+  </header>
 
       {/* About Section */}
       <section className="py-16 px-6">
@@ -75,20 +69,20 @@ export default function App() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Key Priorities</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">Advocacy</h3>
+            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-blue-600">
+              <h3 className="text-xl font-semibold text-blue-600 mb-3">Advocacy</h3>
               <p className="text-gray-700">
                 Fighting for REALTOR® interests at every level and ensuring our voices are heard in policy decisions.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">Education</h3>
+            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-red-600">
+              <h3 className="text-xl font-semibold text-red-600 mb-3">Education</h3>
               <p className="text-gray-700">
                 Providing resources and training to help REALTORS® succeed in an evolving marketplace.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">Community</h3>
+            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-yellow-500">
+              <h3 className="text-xl font-semibold text-yellow-600 mb-3">Community</h3>
               <p className="text-gray-700">
                 Building stronger connections within our association and serving our local communities.
               </p>
@@ -138,14 +132,16 @@ export default function App() {
             </div>
           </div>
 
-          {/* Thumbnail Dots */}
+                      {/* Thumbnail Dots */}
           <div className="flex justify-center gap-2 mt-4">
             {galleryImages.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
                 className={`w-3 h-3 rounded-full transition ${
-                  index === currentImageIndex ? 'bg-blue-900' : 'bg-gray-300 hover:bg-gray-400'
+                  index === currentImageIndex 
+                    ? index % 3 === 0 ? 'bg-blue-600' : index % 3 === 1 ? 'bg-red-600' : 'bg-yellow-500'
+                    : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to image ${index + 1}`}
               />
@@ -160,7 +156,7 @@ export default function App() {
           <h2 className="text-3xl font-bold text-gray-800 mb-8">Connect With Tammy</h2>
           <div className="flex justify-center gap-6 mb-8">
             <a 
-              href="https://www.facebook.com/daveandtammy2016/" 
+              href="https://facebook.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition"
@@ -168,7 +164,7 @@ export default function App() {
               <Facebook size={32} />
             </a>
             <a 
-              href="https://www.linkedin.com/in/tammysherrell/" 
+              href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition"
@@ -176,25 +172,25 @@ export default function App() {
               <Linkedin size={32} />
             </a>
             <a 
-              href="mailto:sales@sherrellrealty.com"
+              href="mailto:contact@example.com"
               className="bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition"
             >
               <Mail size={32} />
             </a>
             <a 
-              href="tel:+14176999100"
+              href="tel:+15551234567"
               className="bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition"
             >
               <Phone size={32} />
             </a>
           </div>
           <div className="bg-blue-900 text-white rounded-lg p-8 inline-block">
-            <h3 className="text-2xl font-bold mb-4">Visit Sherrell Realty</h3>
+            <h3 className="text-2xl font-bold mb-4">Visit Tammy's Real Estate Page</h3>
             <p className="text-lg mb-6">
               Learn more about Tammy's professional real estate services
             </p>
             <a 
-              href="https://www.sherrellrealty.com/" 
+              href="https://www.example.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
