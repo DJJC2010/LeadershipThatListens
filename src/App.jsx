@@ -47,24 +47,7 @@ export default function App() {
     </div>
   </header>
 
-      {/* About Section */}
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">About Tammy</h2>
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <p className="text-lg text-gray-700 mb-4">
-              With over [XX] years of experience in real estate, Tammy Sherrell-Shortt has demonstrated 
-              unwavering commitment to our industry and community. Her leadership style focuses on 
-              collaboration, transparency, and putting REALTORS® first.
-            </p>
-            <p className="text-lg text-gray-700">
-              [Add biographical information, professional achievements, and community involvement here]
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Platform/Priorities Section */}
+    {/* Platform/Priorities Section */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Key Priorities</h2>
@@ -90,6 +73,33 @@ export default function App() {
           </div>
         </div>
       </section>
+      
+      {/* About Section */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">About Tammy Sherrell Shortt</h2>
+          <div className="bg-white rounded-lg shadow-md p-8">
+            <p className="text-md text-gray-700 mb-4">
+              Tammy is an accomplished REALTOR®, Broker/Owner, and respected industry leader with over two decades of experience in Missouri real estate. After opening her own real estate office in 2007, Tammy quickly established a reputation for professionalism, integrity, and her extensive knowledge of the markets she serves. Her background in the title and mortgage industry gives her a unique ability to guide clients confidently through every step of the home buying and selling process.
+            </p>
+            <p className="text-md text-gray-700 mb-4">
+              More than a businesswoman, Tammy believes in relationships built on trust. Many of her clients become lifelong friends — a reflection of her genuine care, attentive service, and belief that real estate is as much about people as it is about property.
+            </p>
+            <p className="text-md text-gray-700 mb-4">
+              Within the REALTOR® community, Tammy is deeply engaged in leadership and advocacy. She served as Women’s Council of Realtors MO State President in 2022 and worked to build and inspire others across the state. She most recently served as <b>Chair of the Missouri REALTORS® Strategic Planning Committee</b>, sits on the <b>Professional Standards Committee</b>, and serves as a State Political Coordinator for State Representative Holly Jones. A proud <b>Golden R® investor, President’s Circle Member</b>, and <b>Missouri REALTORS® Hall of Fame inductee (Class of 2026)</b>, Tammy exemplifies the values of commitment, service, and forward-thinking leadership.
+
+            </p>
+            <p className="text-md text-gray-700 mb-4">
+              Tammy’s leadership philosophy is grounded in listening first, leading with integrity, and empowering others to succeed. She is passionate about mentoring fellow REALTORS®, upholding ethical practices, and ensuring that Missouri REALTORS® continues to thrive for generations to come
+            </p>
+            <p className="text-md text-gray-700 mb-4">
+              Aside from real estate, Tammy stays involved with her community by serving at her church, HavaHeart Rescue, and other organizations in the community. Tammy enjoys free time boating at Table Rock Lake, reading, and traveling with her husband, Dave and other family and friends
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
 
       {/* Photo Gallery Section - Carousel */}
       <section className="py-16 px-6 bg-white">
