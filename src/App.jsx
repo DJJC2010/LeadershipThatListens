@@ -1,18 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Facebook, Linkedin, Mail, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function App() {
   // Gallery images - add more as campaign progresses
   const galleryImages = [
-    { src: "https://via.placeholder.com/800x600?text=Campaign+Photo+1", alt: "Campaign event 1" },
-    { src: "https://via.placeholder.com/800x600?text=Campaign+Photo+2", alt: "Campaign event 2" },
-    { src: "https://via.placeholder.com/800x600?text=Campaign+Photo+3", alt: "Campaign event 3" },
-    { src: "https://via.placeholder.com/800x600?text=Campaign+Photo+4", alt: "Campaign event 4" },
-    { src: "https://via.placeholder.com/800x600?text=Campaign+Photo+5", alt: "Campaign event 5" },
-    { src: "https://via.placeholder.com/800x600?text=Campaign+Photo+6", alt: "Campaign event 6" },
+    { src: "/images/IMG_01.jpg", alt: "Campaign event 1" },
+    { src: "/images/IMG_02.jpg", alt: "Campaign event 2" },
+    { src: "/images/IMG_03.jpg", alt: "Campaign event 3" },
+    { src: "/images/IMG_04.jpg", alt: "Campaign event 4" },
+    { src: "/images/IMG_05.jpg", alt: "Campaign event 5" },
+    { src: "/images/IMG_06.jpg", alt: "Campaign event 6" },
+    { src: "/images/IMG_07.jpg", alt: "Campaign event 7" },
+    { src: "/images/IMG_08.jpg", alt: "Campaign event 8" },
+    { src: "/images/IMG_09.jpg", alt: "Campaign event 9" },
+    { src: "/images/IMG_10.jpg", alt: "Campaign event 10" },
+    { src: "/images/IMG_11.jpg", alt: "Campaign event 11" },
+    { src: "/images/IMG_12.jpg", alt: "Campaign event 12" },
+    { src: "/images/IMG_13.jpg", alt: "Campaign event 13" },
+    { src: "/images/IMG_14.jpg", alt: "Campaign event 14" },
+    { src: "/images/IMG_15.jpg", alt: "Campaign event 15" },
+    { src: "/images/IMG_16.jpg", alt: "Campaign event 16" },
+    { src: "/images/IMG_17.jpg", alt: "Campaign event 17" },
+    { src: "/images/IMG_18.jpg", alt: "Campaign event 18" },
+    { src: "/images/IMG_19.jpg", alt: "Campaign event 19" },
+    { src: "/images/IMG_20.jpg", alt: "Campaign event 20" },
+    { src: "/images/IMG_21.JPG", alt: "Campaign event 21" },
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === galleryImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // 4 seconds between slides
+
+    return () => clearInterval(interval);
+  }, [galleryImages.length, isPaused]);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
@@ -73,7 +102,7 @@ export default function App() {
           </div>
         </div>
       </section>
-      
+
       {/* About Section */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
@@ -86,11 +115,11 @@ export default function App() {
               More than a businesswoman, Tammy believes in relationships built on trust. Many of her clients become lifelong friends — a reflection of her genuine care, attentive service, and belief that real estate is as much about people as it is about property.
             </p>
             <p className="text-md text-gray-700 mb-4">
-              Within the REALTOR® community, Tammy is deeply engaged in leadership and advocacy. She served as Women’s Council of Realtors MO State President in 2022 and worked to build and inspire others across the state. She most recently served as <b>Chair of the Missouri REALTORS® Strategic Planning Committee</b>, sits on the <b>Professional Standards Committee</b>, and serves as a State Political Coordinator for State Representative Holly Jones. A proud <b>Golden R® investor, President’s Circle Member</b>, and <b>Missouri REALTORS® Hall of Fame inductee (Class of 2026)</b>, Tammy exemplifies the values of commitment, service, and forward-thinking leadership.
+              Within the REALTOR® community, Tammy is deeply engaged in leadership and advocacy. She served as Women's Council of Realtors MO State President in 2022 and worked to build and inspire others across the state. She most recently served as <b>Chair of the Missouri REALTORS® Strategic Planning Committee</b>, sits on the <b>Professional Standards Committee</b>, and serves as a State Political Coordinator for State Representative Holly Jones. A proud <b>Golden R® investor, President's Circle Member</b>, and <b>Missouri REALTORS® Hall of Fame inductee (Class of 2026)</b>, Tammy exemplifies the values of commitment, service, and forward-thinking leadership.
 
             </p>
             <p className="text-md text-gray-700 mb-4">
-              Tammy’s leadership philosophy is grounded in listening first, leading with integrity, and empowering others to succeed. She is passionate about mentoring fellow REALTORS®, upholding ethical practices, and ensuring that Missouri REALTORS® continues to thrive for generations to come
+              Tammy's leadership philosophy is grounded in listening first, leading with integrity, and empowering others to succeed. She is passionate about mentoring fellow REALTORS®, upholding ethical practices, and ensuring that Missouri REALTORS® continues to thrive for generations to come
             </p>
             <p className="text-md text-gray-700 mb-4">
               Aside from real estate, Tammy stays involved with her community by serving at her church, HavaHeart Rescue, and other organizations in the community. Tammy enjoys free time boating at Table Rock Lake, reading, and traveling with her husband, Dave and other family and friends
@@ -99,22 +128,24 @@ export default function App() {
         </div>
       </section>
 
-      
-
-      {/* Photo Gallery Section - Carousel */}
+      {/* Photo Gallery Section - Carousel with Auto-Scroll */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">Campaign Trail</h2>
           <p className="text-center text-gray-600 mb-8">Following Tammy's journey on the campaign</p>
           
-          {/* Carousel */}
-          <div className="relative">
+          {/* Carousel - Pauses on hover */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             {/* Main Image */}
-            <div className="bg-gray-200 rounded-lg overflow-hidden aspect-video">
+            <div className="bg-gray-200 rounded-lg overflow-hidden" style={{height:'500px'}}>
               <img 
                 src={galleryImages[currentImageIndex].src}
                 alt={galleryImages[currentImageIndex].alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-gray-100"
               />
             </div>
 
@@ -142,7 +173,7 @@ export default function App() {
             </div>
           </div>
 
-                      {/* Thumbnail Dots */}
+          {/* Thumbnail Dots */}
           <div className="flex justify-center gap-2 mt-4">
             {galleryImages.map((_, index) => (
               <button
