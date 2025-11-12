@@ -54,27 +54,27 @@ export default function App() {
   return (
 <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
   {/* Combined Header/Hero Section - White Background */}
-  <header className="bg-white shadow-md relative overflow-hidden">
+ <header className="bg-white shadow-md relative overflow-hidden">
     <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-end justify-center gap-4 md:gap-0 lg:gap-0 py-6 md:py-0 md:-mb-0">
-      
-      
-      {/* Logo on Left - Flush Bottom */}
-      <div className="flex overflow-hidden max-h-80 md:max-h-96 lg:max-h-[400px] self-end md:self-auto">
+      {/* Logo on Right - Flush Bottom */}
+      <div className="flex overflow-hidden max-h-80 md:max-h-96 lg:max-h-[400px]">
         <img 
           src="/images/tammylogo_update.png" 
           alt="Leadership That Listens" 
-          className="h-80 md:h-[800px] lg:h-[900px] w-64 md:w-80 lg:w-96 object-cover object-center block relative -top-4 md:-top-20 lg:-top-40"
+          className="h-auto w-full md:w-80 lg:w-96 object-contain block"
         />
       </div>
-
-      {/* Headshot on Right - Flush Bottom */}
-      <div className="flex overflow-hidden max-h-64 md:max-h-96 lg:max-h-[400px] self-end md:self-auto">
+      
+      {/* Headshot on Left */}
+      <div className="flex">
         <img 
           src="/images/tammyphoto-removebg-preview.png" 
           alt="Tammy Sherrell-Shortt" 
-          className="h-64 md:h-96 lg:h-[400px] w-64 md:w-80 lg:w-96 object-cover object-top block"
+          className="h-64 md:h-96 lg:h-[400px] w-auto block"
         />
       </div>
+      
+      
     </div>
   </header>
 
