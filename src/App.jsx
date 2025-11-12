@@ -66,7 +66,7 @@ export default function App() {
       </div>
       
       {/* Headshot on Left */}
-      <div className="flex">
+      <div className="flex overflow-hidden">
         <img 
           src="/images/tammyphoto-removebg-preview.png" 
           alt="Tammy Sherrell-Shortt" 
