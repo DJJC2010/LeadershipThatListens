@@ -207,7 +207,7 @@ export default function App() {
               <Facebook size={32} />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/tammysherrell/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-blue-600 text-white p-4 rounded-full hover:bg-blue-700 transition"
