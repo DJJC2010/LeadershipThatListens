@@ -154,7 +154,7 @@ export default function App() {
             {/* Left Arrow */}
             <button 
               onClick={prevImage}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 p-3 rounded-full shadow-lg transition"
               aria-label="Previous image"
             >
               <ChevronLeft size={24} className="text-gray-800" />
@@ -163,14 +163,14 @@ export default function App() {
             {/* Right Arrow */}
             <button 
               onClick={nextImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 p-3 rounded-full shadow-lg transition"
               aria-label="Next image"
             >
               <ChevronRight size={24} className="text-gray-800" />
             </button>
 
             {/* Image Counter */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded-full text-sm">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/30 text-white px-4 py-2 rounded-full text-sm">
               {currentImageIndex + 1} / {galleryImages.length}
             </div>
           </div>
